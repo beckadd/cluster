@@ -4,8 +4,6 @@ kind: Application
 metadata:
   name: argocd
   namespace: argocd
-  labels:
-    name: argocd
 spec:
   project: default
   source:
@@ -13,7 +11,7 @@ spec:
     targetRevision: HEAD
     path: argocd
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
     automated:

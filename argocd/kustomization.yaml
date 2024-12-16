@@ -6,8 +6,8 @@ resources:
 - ./namespace.yaml
 - https://github.com/argoproj/argo-cd//manifests/cluster-install?ref=stable
 
-components:
-- https://github.com/argoproj-labs/argocd-extensions/manifests
+# components:
+# - https://github.com/argoproj-labs/argocd-extensions/manifests
 
 # changes to config maps
 patches:
