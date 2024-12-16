@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  # adding crossplane-recommended adjustments 
+  # https://docs.crossplane.io/latest/guides/crossplane-with-argo-cd/
+  application.resourceTrackingMethod: annotation
+  resource.exclusions: |
+      - apiGroups:
+        - "*"
+        kinds:
+        - ProviderConfigUsage
